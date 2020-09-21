@@ -77,6 +77,10 @@ class TrendingDocsControllerIT {
 
         List<Entry<String, Long>> trendingDocuments = controllerUnderTest.getLastTrendingDocuments(strDate1, strDate2);
         System.out.println(" ---> Trending Documents size: " + trendingDocuments.size());
+        System.out.println(" ---> First 10 most Trending Documents: " + trendingDocuments.size());
+        trendingDocuments.forEach(x -> {
+            System.out.println(" ---> x : " + x );
+        });
 
         assertTrue(!trendingDocuments.isEmpty());
         assertTrue(trendingDocuments.size() <= TrendingDocsController.RESULT_MAX_SIZE);
